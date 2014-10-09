@@ -1,0 +1,138 @@
+.tree * {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 10px arial, verdana, tahoma;
+	color: #666;
+	background-color: #fff;
+}
+.tree {
+	white-space: nowrap;
+}
+.tree ul {
+	padding-top: 0.5rem;
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	font-size: 0;
+}
+.tree li {
+	display: inline-block;
+	text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 4rem 0.1rem;
+	font-size: 1.02rem;
+}
+.tree li a {
+	border: 0.1rem solid #ccc;
+	text-decoration: none;
+	color: #000;
+	background-color: #fff;
+	display: inline-block;
+  vertical-align: middle;
+}
+/* male styling */
+li a.m {
+  padding: 1rem;
+	width: 5rem;
+	height: 4rem;
+	border-radius: 1rem;
+	font-size: 0.7rem;
+	background: #c8e4fb;
+}
+/* female styling */
+li a.f {
+ 	padding: 1.5rem 0.6rem;
+	width: 6rem;
+	height: 4rem;
+	border-radius: 50%;
+	font-size: 0.7rem;
+	background: #ffc0cb;
+}
+/* marriage connection */
+.tree li.marriage {
+	height: 0rem;
+	border: 0.1rem;
+	border-style: solid;
+	border-color: #000;
+	color: #000;
+	padding: 0;
+	background: #FFF;
+}
+.tree li.marriage:before { border: none;}
+/* divorce connection */
+.tree li.divorce {
+	height: 0rem;
+	border: 0.1rem;
+	border-style: dashed;
+	border-color: #000;
+	color: #000;
+	padding: 0;
+	background: #FFF;
+}
+.tree li.divorce::before { border: none }
+
+/* We will use :before and :after to draw the connectors */
+.tree li:before, 
+.tree li::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 50%;
+	border-top: 0.15rem solid #ccc;
+	width: 50%;
+	height: 4rem;
+}
+.tree li::after {
+	right: auto;
+	left: 50%;
+	border-left: 0.15rem solid #ccc;
+}
+/* We need to remove left-right connectors from elements without any siblings */
+.tree li:only-child::after { display: none;}
+/* Remove left connector from first child and right connector from last child */
+.tree li:first-child::before, 
+.tree li:last-child::after { border: 0 none;}
+/* Adding back the vertical connector to the last nodes */
+.tree li li:last-child:before {
+	border-right: 0.15rem solid #ccc;
+	border-radius: 0 0.5rem 0 0;
+	-webkit-border-radius: 0 0.5rem 0 0;
+	-moz-border-radius: 0 0.5rem 0 0;
+}
+.tree li:first-child:after {
+	border-radius: 0.5rem 0 0 0;
+	-webkit-border-radius: 0.5rem 0 0 0;
+	-moz-border-radius: 0.5rem 0 0 0;
+}
+.tree li li:only-child:before {
+	right: auto;
+	left: 50%;
+	border-left: 0.15rem solid #ccc;
+	border-right: none;
+}
+
+/* Use pf to indicate that its a child of another family */
+.tree ul.pf > li:before {
+	right: auto;
+	left: 50%;
+	border-left: 0.15rem solid #ccc;
+	border-right: none;
+}
+.tree ul.pf > li.parent:before { border: none;}
+.tree ul.pf > li:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 50%;
+	border-top: none;
+	width: 50%;
+	height: 2rem;
+}
+.tree ul.pf > li:after { border-left: none;}
+.tree ul.pf > li.parentWithAncestor:before { border-top: none;}
+
+/* Time to add downward connectors from parents */
+.tree ul.c { padding-top: 4rem;}
