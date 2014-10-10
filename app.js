@@ -1,1 +1,3 @@
-console.log('loaded app.js');
+$(document).ready(function() {
+	console.log('doc is ready');
+});

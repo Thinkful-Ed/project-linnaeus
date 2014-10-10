@@ -1,43 +1,67 @@
 <!doctype html>
 <html>
-<head>
-	<title>The Camelids</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="tree">
-		<ul>
-			<li class="m level-0">
-				<a>Mammals</a>
-				<ul>
-					<li class="m level-1"><a>Aardvarks</a></li>
-					<li class="m level-1">
-						<a>Camels</a>
-						<ul>
-							<li class="m level-2">
-								<a>True Camels</a>
-								<ul>
-									<li class="m level-3"><a>Dromedary</a></li>
-									<li class="m level-3"><a>Bactrian</a></li>
-								</ul>
-							</li>
-							<li class="m level-2"><a>Llamas</a></li>
-							<li class="m level-2"><a>Vicuna</a></li>
-						</ul>
-					</li>
-					<li class="m level-1"><a>Deer</a></li>
-					<li class="m level-1">
-						<a>Elephants</a>
-						<ul>
-							<li class="m level-2"><a>African</a></li>
-							<li class="m level-2"><a>Asian</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="app.js"></script>
-</body>
+	<head>
+		<title>
+			Taxonomy Tree
+		</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="tree">
+			<ul>
+				<li id="mammals" class="m">
+					<a class="level-0"><img src="//placehold.it/110x110&text=Mammal"></a>
+					<ul>
+						<li id="aardvarks" class="m">
+							<a class="level-1">
+								<img src="//placehold.it/110x110&text=Aardvarks">
+							</a>
+						</li>
+						<li id="camels" class="m">
+							<a class="level-1"><img src="//placehold.it/110x110&text=Camels"></a>
+							<ul>
+								<li id="true-camels" class="m">
+									<a class="level-2">
+										<img src="//placehold.it/110x110&text=True+Camels"></a>
+									<ul>
+										<li id="dromedary" class="m">
+											<a class="level-3"><img src="//placehold.it/110x110&text=Dromedary"></a>
+										</li>
+										<li id="bactrian" class="m">
+											<a class="level-3"><img src="//placehold.it/110x110&text=Bactrian"></a>
+										</li>
+									</ul>
+								</li>
+								<li id="llamas" class="m">
+									<a class="level-2"><img src="//placehold.it/110x110&text=Llamas"></a>
+								</li>
+								<li id="vicuña" class="m">
+									<a class="level-2"><img src="//placehold.it/110x110&text=Vicuña"></a>
+								</li>
+							</ul>
+						</li>
+						<li class="m" id="deer">
+							<a class="level-1"><img src="//placehold.it/110x110&text=Deer"></a>
+						</li>
+						<li id="elephants" class="m">
+							<a class="level-1"><img src="//placehold.it/110x110&text=Elephants"></a>
+							<ul>
+								<li id="african" class="m">
+									<a class="level-2"><img src="//placehold.it/110x110&text=African"></a>
+								</li>
+								<li id="asian" class="m">
+									<a class="level-2"><img src="//placehold.it/110x110&text=Asian"></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+		</script>
+		<script src="app.js">
+		</script>
+	</body>
+
 </html>
